@@ -1,0 +1,17 @@
+name: Run Gemini CLI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-gemini:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Gemini CLI
+        uses: google-github-actions/run-gemini-cli@v0.1.12
+        with:
+          args: model generate-text --prompt="Hello Gemini!"
